@@ -1,6 +1,6 @@
 import javax.swing.JFrame;
  
-public class Pong extends JFrame {
+public class Pong extends JFrame { // Open Pong Class
 	
 	//Window Title
 	private final static String WINDOW_TITLE = "Pong";
@@ -9,7 +9,7 @@ public class Pong extends JFrame {
 	//Window Height
 	private final static int WINDOW_HEIGHT = 600;
 	
-	public Pong() {
+	public Pong() { // Open Pong
 		//Display Window Title As "Pong"
 		setTitle(WINDOW_TITLE);
 		//Display Window Width: 800 & Window Height: 600
@@ -23,21 +23,21 @@ public class Pong extends JFrame {
 		//On Exit Terminate Program
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-	}
+	} // Close Pong
 	
 	//When Program is Run...
-	public static void main(String[] args) {      
+	public static void main(String[] args) { // Open Main     
 		
 		//Run PongPanel.java 
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() { // Open Excutable
  
-          public void run() {
+          public void run() { // Open Run
  
                  new Pong();
  
-          }
+          } // Close Run
  
-        });
-	}
-}
+        });// Close Excutable
+	} // Close Main
+} // Close Pong Class
  

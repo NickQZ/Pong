@@ -47,7 +47,7 @@ public void setheight(int height) { this.height = height; }
 public void setColor(Color colour) { this.colour = colour; }
 
 // Set Initial Start Positions
-public void setInitialXPosition(int initialX, int initialY) {initialXPosition = initialX; initialYPosition = initialY; } 
+public void setInitialPosition(int initialX, int initialY) {initialXPosition = initialX; initialYPosition = initialY; } 
 
 // Set Initial Start Positions
 public void resetToInitialPosition() {

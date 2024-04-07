@@ -26,9 +26,7 @@
 	       //Set Timer start
 	       Timer timer = new Timer(TIMER_DELAY, this);
 	       timer.start();
-	       
-	       
-	       
+ 
 	   } // Close PongPanel
 	   
       //Draws Centered Dotted Line
@@ -41,6 +39,12 @@
     	        g2d.dispose();
     	        
        } // Close PaintDottedLine
+      
+      private void paintSprite(Graphics g, Sprite sprite) {
+    	     g.setColor(sprite.getColour());
+    	     g.fillRect(sprite.getxPosition(), sprite.getyPosition(), sprite.getwidth(), sprite.getheight());
+    	}
+      
       
       @Override
       public void keyPressed(KeyEvent event) { // Open KeyPressed
@@ -56,10 +60,33 @@
       public void keyTyped(KeyEvent event) { // Open keyTyped
 
       } // Close keyTyped
-     
-      public void update() { // Open Update
-    	  
+      
+      // Create Ball Object
+        GameState gameState = GameState.INITIALISING;
+        Ball ball;
+              
+        public void createObjects() {
+               ball = new Ball(getWidth(), getHeight());
+        }
+        
+        // Update Objects
+        private void update() {
+         switch(gameState) {
+         case INITIALISING: {
+         createObjects();
+         gameState = GameState.PLAYING;
+          break;
+         }
+          case PLAYING: {
+          break;
+        	            }
+          case GAMEOVER: {
+          break;
+          }
+         }
+             
       } // Close Update
+      
       
       @Override
       public void actionPerformed(ActionEvent event) { // Open ActionPreformed
@@ -71,12 +98,19 @@
       //Draws graphics on JPanel
       @Override
        public void paintComponent(Graphics g) {// Open PaintComponent
+    	  // Paint Dotted Line
             super.paintComponent(g);
             paintDottedLine(g);
-            
+            // Paint Ball Sprite
+            if(gameState != GameState.INITIALISING) {
+                paintSprite(g, ball);
+            }
        }// Close PaintComponent
       
-      
+      public void gameState(ActionEvent event){
+    	  
+      }
+     
       
       
    } // Close PongPanel Class
